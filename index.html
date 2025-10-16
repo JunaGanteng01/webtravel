@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUNTRAVEL - Agen Perjalanan Terpercaya</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="#">
+                    <h2>JUNTRAVEL</h2>
+                </a>
+                <button class="navbar-toggler hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#destinasi">Destinasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimoni">Testimoni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#kontak">Kontak Kami</a>
+                        </li>
+                    </ul>
+                    <div class="cta-button">
+                        <button class="btn btn-primary" onclick="scrollToBooking()">
+                            Pesan Sekarang
+                            <div class="countdown-timer" id="headerCountdown">
+                                <span id="days">00</span>d 
+                                <span id="hours">00</span>h 
+                                <span id="minutes">00</span>m
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile CTA Button (Fixed at bottom on mobile) -->
+    <div class="mobile-cta-button">
+        <button class="btn btn-primary" onclick="scrollToBooking()">
+            Pesan Sekarang
+            <div class="countdown-timer" id="mobileCountdown">
+                <span id="mobileDays">00</span>d 
+                <span id="mobileHours">00</span>h 
+                <span id="mobileMinutes">00</span>m
+            </div>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Video/Image -->
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="container-fluid hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Agen Perjalanan Terpercaya #1</span>
+                    </div>
+                    <h1>
+                        <span class="hero-title-line">Liburan Impian</span>
+                        <span class="hero-title-line highlight">di Destinasi</span>
+                        <span class="hero-title-line">Menarik!</span>
+                    </h1>
+                    <p class="hero-description">
+                        Temukan pengalaman perjalanan tak terlupakan dengan paket wisata terbaik dari JUNTRAVEL. 
+                        Dari pantai tropis hingga kota metropolitan, kami siap mewujudkan mimpi liburan Anda.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-label">Pelanggan Puas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Destinasi</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-hero primary" onclick="scrollToBooking()">
+                            <i class="fas fa-plane"></i>
+                            Pesan Sekarang
+                        </button>
+                        <button class="btn btn-hero secondary" onclick="scrollToSection('destinasi')">
+                            <i class="fas fa-play"></i>
+                            Lihat Destinasi
+                        </button>
+                    </div>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Garansi Terpercaya</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Booking Instan</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Pengalaman Terbaik</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 hero-visual">
+                    <div class="hero-image-container">
+                        <div class="image-stack">
+                            <div class="main-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Destinasi Tropis">
+                                <div class="image-overlay">
+                                    <div class="play-button" onclick="scrollToSection('destinasi')">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-card card-1">
+                                <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bali">
+                                <div class="card-info">
+                                    <h4>Bali</h4>
+                                    <p>Mulai dari Rp 2.5jt</p>
+                                </div>
+                            </div>
+                            <div class="floating-card card-2">
+                                <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Singapura">
+                                <div class="card-info">
+                                    <h4>Singapura</h4>
+                                    <p>Mulai dari Rp 3.5jt</p>
+                                </div>
+                            </div>
+                            <div class="floating-card card-3">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Thailand">
+                                <div class="card-info">
+                                    <h4>Thailand</h4>
+                                    <p>Mulai dari Rp 2.8jt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-scroll-indicator">
+                        <div class="scroll-text">Scroll untuk melihat lebih banyak</div>
+                        <div class="scroll-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinasi Section -->
+    <section id="destinasi" class="destinasi">
+        <div class="container">
+            <h2 class="section-title">Destinasi Unggulan</h2>
+            <div class="row destinasi-grid">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Bali">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Bali, Indonesia</h3>
+                            <p class="card-text">Pulau dewata dengan pantai eksotis, budaya yang kaya, dan pemandangan sunset yang memukau.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Singapura">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Singapura</h3>
+                            <p class="card-text">Kota metropolitan modern dengan taman futuristik, kuliner lezat, dan hiburan tak terbatas.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Thailand">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Thailand</h3>
+                            <p class="card-text">Negeri seribu pagoda dengan kuil megah, pasar terapung, dan pantai tropis yang menawan.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Malaysia">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Malaysia</h3>
+                            <p class="card-text">Keberagaman budaya yang harmonis, gedung pencakar langit, dan hutan hujan yang hijau.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Filipina">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Filipina</h3>
+                            <p class="card-text">Pulau-pulau eksotis dengan air laut jernih, terumbu karang indah, dan budaya yang hangat.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card destinasi-card h-100">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="card-img-top" alt="Vietnam">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Vietnam</h3>
+                            <p class="card-text">Sejarah yang kaya, kuliner yang menggugah selera, dan pemandangan alam yang memesona.</p>
+                            <button class="btn btn-secondary">Lihat Lebih Banyak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="testimoni">
+        <div class="container">
+            <div class="row testimoni-header">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Testimoni Pelanggan</h2>
+                    <p class="testimoni-subtitle">Dengarkan pengalaman perjalanan tak terlupakan dari pelanggan kami</p>
+                </div>
+            </div>
+            
+            <div class="row testimoni-container">
+                <div class="col-12">
+                    <!-- Swiper -->
+                    <div class="swiper testimoni-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card testimoni-card">
+                                    <div class="card-body">
+                                        <div class="testimoni-header-card">
+                                        <div class="testimoni-avatar">
+                                            <img src="foto/WhatsApp Image 2025-10-03 at 10.16.20_4db94d0a.jpg" alt="Hanna Ross">
+                                        </div>
+                                            <div class="testimoni-info">
+                                                <h4>Hanna Ross</h4>
+                                                <p class="testimoni-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Jakarta, Indonesia
+                                                </p>
+                                                <div class="testimoni-rating">
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                    <span class="rating-text">5.0</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimoni-destination">
+                                                <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Bali">
+                                                <span>Bali</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimoni-content">
+                                            <blockquote>
+                                                Perjalanan ke Bali bersama JUNTRAVEL sungguh luar biasa! Pelayanan yang profesional dan paket wisata yang lengkap. Guide kami sangat berpengalaman dan ramah. Highly recommended untuk siapa saja yang ingin liburan berkualitas!
+                                            </blockquote>
+                                            <div class="testimoni-meta">
+                                                <div class="testimoni-date">
+                                                    <i class="fas fa-calendar"></i>
+                                                    <span>Maret 2024</span>
+                                                </div>
+                                                <div class="testimoni-duration">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>5 Hari 4 Malam</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="swiper-slide">
+                                <div class="card testimoni-card">
+                                    <div class="card-body">
+                                        <div class="testimoni-header-card">
+                                        <div class="testimoni-avatar">
+                                            <img src="foto/WhatsApp Image 2025-10-03 at 10.16.21_bbdd8426.jpg" alt="Sri Kusuma">
+                                        </div>
+                                            <div class="testimoni-info">
+                                                <h4>Sri Kusuma</h4>
+                                                <p class="testimoni-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Bandung, Indonesia
+                                                </p>
+                                                <div class="testimoni-rating">
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                    <span class="rating-text">5.0</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimoni-destination">
+                                                <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Singapura">
+                                                <span>Singapura</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimoni-content">
+                                            <blockquote>
+                                                Singapura trip dengan JUNTRAVEL sangat memuaskan! Guide yang ramah dan itinerary yang well-planned. Semua tempat wisata yang dikunjungi sesuai ekspektasi. Pasti akan booking lagi untuk destinasi berikutnya!
+                                            </blockquote>
+                                            <div class="testimoni-meta">
+                                                <div class="testimoni-date">
+                                                    <i class="fas fa-calendar"></i>
+                                                    <span>Februari 2024</span>
+                                                </div>
+                                                <div class="testimoni-duration">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>4 Hari 3 Malam</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <div class="card testimoni-card">
+                                    <div class="card-body">
+                                        <div class="testimoni-header-card">
+                                        <div class="testimoni-avatar">
+                                            <img src="foto/WhatsApp Image 2025-10-03 at 10.16.21_f370c8e3.jpg" alt="Pak Yudi">
+                                        </div>
+                                            <div class="testimoni-info">
+                                                <h4>Pak Yudi</h4>
+                                                <p class="testimoni-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Surabaya, Indonesia
+                                                </p>
+                                                <div class="testimoni-rating">
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                    <span class="rating-text">5.0</span>
+                                                </div>
+                                            </div>
+                                            <div class="testimoni-destination">
+                                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Thailand">
+                                                <span>Thailand</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimoni-content">
+                                            <blockquote>
+                                                Thailand adventure bersama JUNTRAVEL adalah pengalaman terbaik! Dari Bangkok hingga Phuket, semuanya perfect! Hotel yang dipilih sangat nyaman dan makanan lokal yang disarankan sangat lezat. Terima kasih JUNTRAVEL!
+                                            </blockquote>
+                                            <div class="testimoni-meta">
+                                                <div class="testimoni-date">
+                                                    <i class="fas fa-calendar"></i>
+                                                    <span>Januari 2024</span>
+                                                </div>
+                                                <div class="testimoni-duration">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>6 Hari 5 Malam</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                       
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination testimoni-pagination"></div>
+                </div>
+                
+                <!-- Navigation buttons outside container -->
+                <div class="testimoni-navigation">
+                    <button class="testimoni-prev" title="Previous testimonial" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimoni-next" title="Next testimonial" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row testimoni-stats">
+                <div class="col-md-4 text-center stat-item">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Rating Rata-rata</div>
+                </div>
+                <div class="col-md-4 text-center stat-item">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Testimoni Positif</div>
+                </div>
+                <div class="col-md-4 text-center stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Tingkat Kepuasan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Penawaran Terbatas Section -->
+    <section class="penawaran">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center penawaran-content">
+                    <h2>Penawaran Spesial Terbatas!</h2>
+                    <h3>Diskon 30% untuk Pemesanan Sekarang!</h3>
+                    <p>Jangan lewatkan kesempatan emas ini! Dapatkan diskon hingga 30% untuk semua paket wisata dengan syarat dan ketentuan berlaku.</p>
+                    <div class="countdown-container">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="offerDays">00</span>
+                            <span class="countdown-label">Hari</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="offerHours">00</span>
+                            <span class="countdown-label">Jam</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="offerMinutes">00</span>
+                            <span class="countdown-label">Menit</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="offerSeconds">00</span>
+                            <span class="countdown-label">Detik</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-offer" onclick="scrollToBooking()">Dapatkan Diskon Sekarang!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Kontak Section -->
+   <section id="kontak" class="kontak">
+    <div class="container">
+        <h2 class="section-title">Kontak Kami</h2>
+        <div class="kontak-content">
+            <div class="kontak-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>+62 819 3558 2862</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>Juntravel@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Sudirman No. 123
+                    </div>
+                </div>
+                <div class="social-media">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-links">
+                        <a href="#" title="Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <form class="kontak-form" id="kontakForm">
+                <h3>Kirim Pesan</h3>
+                <div class="form-group">
+                    <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="pesan" name="pesan" placeholder="Pesan Anda" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-lg-8 col-md-6 mb-4 footer-section">
+                    <h3>JUNTRAVEL</h3>
+                    <p>Mewujudkan mimpi liburan Anda dengan pelayanan terbaik dan pengalaman tak terlupakan.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 footer-section">
+                    <h4>Layanan</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#destinasi">Paket Wisata</a></li>
+                        <li><a href="#">Tiket Pesawat</a></li>
+                        <li><a href="#">Hotel</a></li>
+                        <li><a href="#">Tour Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 footer-section">
+                    <h4>Informasi</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="col mb-4 footer-section">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-phone"></i> +62 819 3558 2862</p>
+                    <p><i class="fas fa-envelope"></i> Juntravel@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bali </p>
+                </div>
+            </div>
+            <div class="row footer-bottom">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 JUNTRAVEL. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
